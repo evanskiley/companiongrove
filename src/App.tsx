@@ -25,6 +25,7 @@ import routerBindings, {
   UnsavedChangesNotifier,
   DocumentTitleHandler,
 } from "@refinedev/react-router";
+
 import {
   BlogPostList,
   BlogPostCreate,
@@ -37,6 +38,11 @@ import {
   CategoryEdit,
   CategoryShow,
 } from "./pages/categories";
+
+import { CustomersList } from "./pages/customers/CustomersList";
+import { StaffList } from "./pages/staff/StaffList";
+import { VolunteersList } from "./pages/volunteers/VolunteersList";
+
 import { AppIcon } from "./components/app-icon";
 import { supabaseClient } from "./utility";
 import { ColorModeContextProvider } from "./contexts/color-mode";
@@ -77,6 +83,18 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
+                  },
+                  {
+                    name: "customers",
+                    list: CustomersList,
+                  },
+                  {
+                    name: "staff",
+                    list: StaffList,
+                  },
+                  {
+                    name: "volunteers",
+                    list: VolunteersList,
                   },
                 ]}
                 options={{
@@ -138,8 +156,8 @@ function App() {
                           type="login"
                           formProps={{
                             initialValues: {
-                              email: "info@refine.dev",
-                              password: "refine-supabase",
+                              email: "",
+                              password: "",
                             },
                           }}
                         />

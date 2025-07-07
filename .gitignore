@@ -1,0 +1,14 @@
+# Ignore environment variables
+.env
+.env.local
+.env.*
+
+# Ignore Node modules
+node_modules/
+
+# Ignore build output (if any)
+dist/
+build/
+
+# MacOS system files
+.DS_Store
